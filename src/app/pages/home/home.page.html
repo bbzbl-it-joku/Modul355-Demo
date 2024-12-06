@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Home</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-item>
+      <ion-input placeholder="Hier text eingeben..." (ionInput)="setInput($event)"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Wie guet isch de ÜK</ion-label>
+      <ion-range aria-label="Range with ticks" [pin]="true" [ticks]="true" [snaps]="true" [min]="0" [max]="10"
+        (ionChange)="setInt($event)"></ion-range>
+    </ion-item>
+
+    <ion-item>
+      <ion-select label="Default label" placeholder="Favorite Color" (ionChange)="setColor($event)">
+        <ion-select-option value="red">Red</ion-select-option>
+        <ion-select-option value="green">Green</ion-select-option>
+        <ion-select-option value="blue">Blue</ion-select-option>
+      </ion-select>
+
+      <ion-toast message="Saved your favorite Color: {{ color }}" [duration]="5000" [isOpen]="isToastOpen"
+        (didDismiss)="setOpen(false)"></ion-toast>
+    </ion-item>
+  </ion-list>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Summary
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Input:</strong> {{ input }}</p>
+      <p><strong>Slider:</strong> {{ int }}</p>
+      <p><strong>Color:</strong> {{ color }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
