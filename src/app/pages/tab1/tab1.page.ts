@@ -2,24 +2,27 @@ import { Component, OnInit } from '@angular/core';
 import { Device } from '@capacitor/device';
 import { Network } from '@capacitor/network';
 import {
-  IonHeader,
-  IonToolbar,
-  IonTitle,
-  IonContent,
+  IonButton,
   IonCard,
   IonCardContent,
   IonCardHeader,
+  IonContent,
+  IonHeader,
+  IonIcon,
   IonItem,
   IonLabel,
-  IonIcon, IonCardTitle, IonButton } from '@ionic/angular/standalone';
+  IonTitle,
+  IonToolbar
+} from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import {
+  batteryDeadOutline,
   batteryFullOutline,
   batteryHalfOutline,
-  batteryDeadOutline,
-  wifiOutline,
   cellularOutline,
-  cloudOfflineOutline, reloadOutline } from 'ionicons/icons';
+  cloudOfflineOutline, reloadOutline,
+  wifiOutline
+} from 'ionicons/icons';
 
 @Component({
   selector: 'app-tab1',
@@ -39,7 +42,7 @@ import {
     IonIcon
   ]
 })
-export class Tab1Page implements OnInit  {
+export class Tab1Page implements OnInit {
   // Battery status
   batteryLevel: number = 0;
   isCharging: boolean = false;
@@ -54,14 +57,14 @@ export class Tab1Page implements OnInit  {
   constructor() {
     // Register icons
     addIcons({
-      'battery-full-outline': batteryFullOutline,
-      'battery-half-outline': batteryHalfOutline,
-      'battery-dead-outline': batteryDeadOutline,
-      'wifi-outline': wifiOutline,
-      'cellular-outline': cellularOutline,
-      'cloud-offline-outline': cloudOfflineOutline,
-      'reload-outline': reloadOutline
-    });
+      batteryFullOutline,
+      batteryHalfOutline,
+      batteryDeadOutline,
+      wifiOutline,
+      cellularOutline,
+      cloudOfflineOutline,
+      reloadOutline
+  });
   }
 
   async ngOnInit() {
