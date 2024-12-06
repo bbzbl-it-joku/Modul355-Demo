@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Device Status
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,42 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">Device Status</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <!-- Battery Status -->
+  <ion-card>
+    <ion-card-header>
+      <ion-title>Battery Status</ion-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-icon [name]="batteryIcon" slot="start" [color]="batteryColor"></ion-icon>
+        <ion-label>
+          <h2>Level: {{ batteryLevel }}%</h2>
+          <p>Charging: {{ isCharging ? 'Yes' : 'No' }}</p>
+        </ion-label>
+        <ion-button slot="end" fill="clear" (click)="checkBatteryStatus()">
+          <ion-icon name="reload-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Network Status -->
+  <ion-card>
+    <ion-card-header>
+      <ion-title>Network Status</ion-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-icon [name]="connectionIcon" slot="start" [color]="isConnected ? 'success' : 'danger'"></ion-icon>
+        <ion-label>
+          <h2>Status: {{ isConnected ? 'Online' : 'Offline' }}</h2>
+          <p>Type: {{ connectionType }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
