@@ -33,7 +33,8 @@
               }
             ],
             "styles": ["src/global.scss", "src/theme/variables.scss"],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": ["ws"]
           },
           "configurations": {
             "production": {
