@@ -34,7 +34,7 @@ export class CategoryService {
   }
 
   async updateCategory(category: Category) {
-    const { error } = await this.supabase.from('categories').update(category).match({ id: category.id }).single();
+    const { error } = await this.supabase.from('categories').update({ id: category.id, name: category.name, created_at: category.createdAt }).match({ id: category.id }).single();
     if (error) {
       throw error;
     }
