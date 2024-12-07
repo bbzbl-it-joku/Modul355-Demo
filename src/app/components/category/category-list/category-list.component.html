@@ -1,0 +1,33 @@
+<ion-content>
+  <ion-grid>
+    <ion-card *ngFor="let category of categories">
+      <ion-card-header>
+        <ion-card-title>{{ category.name }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-button id="edit-category-{{category.id }}">
+          <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+        </ion-button>
+        <ion-button (click)="deleteCategory(category)">
+          <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+        </ion-button>
+        <app-category-dialog trigger="edit-category-{{category.id }}" type="edit" [category]="category"/>
+      </ion-card-content>
+    </ion-card>
+  </ion-grid>
+
+  <ion-spinner *ngIf="isLoading" name="crescent"></ion-spinner>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" class="secondary-button-margin-bottom">
+    <ion-fab-button size="small" color="secondary" (click)="reloadCategories()">
+      <ion-icon name="refresh"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button id="create-fab">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <app-category-dialog trigger="create-fab" type="create"/>
+</ion-content>
