@@ -1,8 +1,5 @@
 import { Routes } from '@angular/router';
+import { generateRoutes } from 'ionic-dynamic-tabs';
+import { APP_TABS } from './app-tabs.config';
 
-export const routes: Routes = [
-  {
-    path: '',
-    loadChildren: () => import('./components/tabs/tabs.routes').then((m) => m.routes),
-  },
-];
+export const routes: Routes = generateRoutes(APP_TABS);
