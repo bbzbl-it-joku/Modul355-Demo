@@ -1,4 +1,4 @@
-import { Tab } from "ionic-dynamic-tabs";
+import { Tab } from "jokudevs-ionic-angular-dynamic-tabs";
 import { HomePage } from "./pages/home/home.page";
 import { Tab1Page } from "./pages/tab1/tab1.page";
 import { Tab2Page } from "./pages/tab2/tab2.page";

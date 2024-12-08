@@ -36,8 +36,8 @@
     "@ionic/angular": "^8.0.0",
     "@supabase/supabase-js": "^2.47.2",
     "change-case": "^5.4.4",
-    "ionic-dynamic-tabs": "^1.0.0",
     "ionicons": "^7.2.1",
+    "jokudevs-ionic-angular-dynamic-tabs": "^1.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.2"
